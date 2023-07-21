@@ -33,6 +33,7 @@ namespace DottedFill
                 GameManager.Instance.playingLevelData = levelData;
                 GameManager.Instance.currentLevel = levelData.level;
                 Loader.Load(Loader.Scene.Level);
+                SoundManager.Instance.PlaySound(SoundType.Button, false);
             }
         }
     }

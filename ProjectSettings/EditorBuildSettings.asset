@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/DottedFill/Scenes/MainMenuScene.unity
+    guid: 3fc8acdd13e6c734bafef6554d6fdbcd
+  - enabled: 1
     path: Assets/DottedFill/Scenes/Level.unity
     guid: dcc6e9e98f7030c49998ff56729acfb7
   m_configObjects:

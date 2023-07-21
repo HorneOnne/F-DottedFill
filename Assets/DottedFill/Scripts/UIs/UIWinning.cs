@@ -19,6 +19,7 @@ namespace DottedFill
             nextLevelBtn.onClick.AddListener(() =>
             {               
                 Loader.Load(Loader.Scene.Level);
+                SoundManager.Instance.PlaySound(SoundType.Button, false);
             });
         }
 
