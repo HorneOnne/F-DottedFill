@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43e68744b18aeb749bc16f06a8b7be8d, type: 3}
   m_Name: Level_01
   m_EditorClassIdentifier: 
+  level: 1
+  isLocking: 0
+  orthographicCameraSize: 3.7
   arrayInt:
     gridSize: {x: 3, y: 3}
     cellSize: {x: 32, y: 16}
@@ -19,4 +22,3 @@ MonoBehaviour:
     - row: 010000000100000002000000
     - row: 010000000100000001000000
     - row: 020000000100000001000000
-  orthographicCameraSize: 3.7

@@ -66,9 +66,10 @@ namespace DottedFill
             if(isTargetNode)
             {
                 GridSystem.Instance.SetStartAndTargetNode(this);
-                if(GamePlayManager.Instance.currentState == GamePlayManager.GameState.PLAYING)
+                if (GamePlayManager.Instance.currentState == GamePlayManager.GameState.PLAYING)
                 {
                     GridSystem.Instance.SetStartAndTargetNode(this);
+
                 }
             }
            

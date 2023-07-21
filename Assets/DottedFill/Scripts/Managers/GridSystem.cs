@@ -25,10 +25,10 @@ namespace DottedFill
         public float gridSpacing = 0.2f;
 
         [Header("Node")]
-        [HideInInspector] public Node startNode;
-        [HideInInspector] public Node finishNode;
+        public Node startNode;
+        public Node finishNode;
         [Space(10)]
-        [HideInInspector] public Node currentNode;
+        public Node currentNode;
 
         [Header("Path")]
         public List<Node> currentNodePath = new List<Node>();
@@ -57,16 +57,19 @@ namespace DottedFill
         }
 
         private void Start()
-        {
-            Camera.main.orthographicSize = levelData.orthographicCameraSize;
-            LoadLevel();
+        {      
+            LoadLevelData();
             CreateGrid();
 
         }
 
 
-        private void LoadLevel()
+        private void LoadLevelData()
         {
+            // Load Levedata from GameManger.
+            this.levelData = GameManager.Instance.playingLevelData;
+
+            Camera.main.orthographicSize = levelData.orthographicCameraSize;
             int rows = levelData.arrayInt.GridSize.x;
             int columns = levelData.arrayInt.GridSize.y;
             gridMap = new Node[rows, columns];
@@ -128,13 +131,16 @@ namespace DottedFill
             if (node.isTargetNode == false) return;
             if (startNode == null)
             {
-                Debug.Log(node == null);
                 startNode = node;
             }
             else if (finishNode == null && node != startNode)
             {
                 finishNode = node;
-                OnStartAndTargetNodesSet?.Invoke();
+
+                StartCoroutine(Utilities.WaitAfter(0.01f, () =>
+                {
+                    OnStartAndTargetNodesSet?.Invoke();
+                }));            
             }
         }
 
@@ -149,7 +155,7 @@ namespace DottedFill
         private void OnStartAndTargetNodeFilled()
         {
             if (currentNodePath.Count == numNodeNeedFill)
-            {              
+            {
                 WinState();
             }
             else
@@ -159,7 +165,7 @@ namespace DottedFill
         }
         private void WinState()
         {
-            GamePlayManager.Instance.currentState = GamePlayManager.GameState.WIN;
+            GamePlayManager.Instance.ChangeGameState(GamePlayManager.GameState.WIN);
         }
 
         private void ResetStateWhenWrongWay()
