@@ -36,7 +36,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Node
   m_SortingLayers:
   - name: BackgroundUI
     uniqueID: 855365045
