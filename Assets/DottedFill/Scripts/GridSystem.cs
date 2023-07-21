@@ -7,7 +7,6 @@ namespace DottedFill
     public class GridSystem : MonoBehaviour
     {
         public static GridSystem Instance { get; private set; }
-        public static event System.Action OnCurrentNodeChanged;
         public static event System.Action OnStartAndTargetNodesSet;
 
         private const int EMPTY = 0;
@@ -26,10 +25,10 @@ namespace DottedFill
         public float gridSpacing = 0.2f;
 
         [Header("Node")]
-        public Node startNode;
-        public Node finishNode;
+        [HideInInspector] public Node startNode;
+        [HideInInspector] public Node finishNode;
         [Space(10)]
-        public Node currentNode;
+        [HideInInspector] public Node currentNode;
 
         [Header("Path")]
         public List<Node> currentNodePath = new List<Node>();
@@ -116,6 +115,14 @@ namespace DottedFill
             }
         }
 
+        public void SetCurrentNode(Node node)
+        {
+            currentNode = node;
+            currentNodePath.Add(node);
+            SetStartAndTargetNode(node);
+            currentNode.Filled();
+        }
+
         public void SetStartAndTargetNode(Node node)
         {
             if (node.isTargetNode == false) return;
@@ -152,13 +159,11 @@ namespace DottedFill
         }
         private void WinState()
         {
-            Debug.Log("==== WIN ====");
             GamePlayManager.Instance.currentState = GamePlayManager.GameState.WIN;
         }
 
         private void ResetStateWhenWrongWay()
         {
-            Debug.Log("==== RESET ====");
             ResetFilledNode();
             LineManager.Instance.ClearAllLines();
 
@@ -166,7 +171,6 @@ namespace DottedFill
             startNode = null;
             finishNode = null;
             currentNodePath.Clear();
-            GamePlayManager.Instance.currentState = GamePlayManager.GameState.PLAYING;
         }
 
         public void RemoveFromNode(Node node)

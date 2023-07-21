@@ -39,7 +39,7 @@ namespace DottedFill
                 sr.color = normalColor;
         }
 
-        public void SetFillNode()
+        public void Filled()
         {
             isFilled = true;
             if (isTargetNode == false)
@@ -68,8 +68,6 @@ namespace DottedFill
                 GridSystem.Instance.SetStartAndTargetNode(this);
                 if(GamePlayManager.Instance.currentState == GamePlayManager.GameState.PLAYING)
                 {
-                    Debug.Log("Still play");
-
                     GridSystem.Instance.SetStartAndTargetNode(this);
                 }
             }

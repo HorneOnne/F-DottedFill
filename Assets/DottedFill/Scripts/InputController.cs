@@ -47,18 +47,14 @@ namespace DottedFill
                                 {                                
                                     if (gridSystem.currentNode == null)
                                     {
-                                        if (hitNode.isTargetNode == false) return;
-
-                                        gridSystem.currentNode = hitNode;
-                                        gridSystem.currentNodePath.Add(hitNode);
-                                        gridSystem.SetStartAndTargetNode(hitNode);
-                                        hitNode.SetFillNode();
-
+                                        if (hitNode.isTargetNode == true)
+                                        {
+                                            gridSystem.SetCurrentNode(hitNode);
+                                        }
                                         return;
                                     }
 
                                     
-
                                     if (gridSystem.currentNode != hitNode)
                                     {
                                         if (hitNode.IsFiiled == false)
@@ -69,10 +65,7 @@ namespace DottedFill
                                             Vector2 pointB = hitNode.transform.position;
                                             gridSystem.currentNode.line.DrawLine(pointA, pointB);
 
-                                            gridSystem.currentNode = hitNode;
-                                            gridSystem.currentNodePath.Add(hitNode);
-                                            gridSystem.SetStartAndTargetNode(hitNode);
-                                            hitNode.SetFillNode();
+                                            gridSystem.SetCurrentNode(hitNode);
                                         }
                                         else
                                         {
@@ -82,12 +75,7 @@ namespace DottedFill
                                             gridSystem.RemoveFromNode(hitNode);
                                             hitNode.line.Clear();
 
-                                            gridSystem.currentNode = hitNode;
-                                            gridSystem.currentNodePath.Add(hitNode);
-                                            gridSystem.SetStartAndTargetNode(hitNode);
-                                            hitNode.SetFillNode();
-
-               
+                                            gridSystem.SetCurrentNode(hitNode);                 
                                         }           
                                     }                                                                      
                                 }

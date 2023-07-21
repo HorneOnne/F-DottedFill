@@ -215,13 +215,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalNodePrefab: {fileID: -2185311716633813270, guid: 36c55ebe380dc014a809115ee496de12, type: 3}
   targetNodePrefab: {fileID: -4369678189150234519, guid: c74a4ef7908bd524d85f4523968844ff, type: 3}
+  levelData: {fileID: 11400000, guid: f10556acfb66a2b449bfeb511a03d703, type: 2}
   pointScaleFactor: 1
   gridSpacing: 1.1
-  levelData: {fileID: 11400000, guid: 587c544eae48753459f67e55d40c8707, type: 2}
-  currentNode: {fileID: 0}
   startNode: {fileID: 0}
   finishNode: {fileID: 0}
-  numNodeNeedFill: 0
+  currentNode: {fileID: 0}
   currentNodePath: []
 --- !u!1 &519420028
 GameObject:
