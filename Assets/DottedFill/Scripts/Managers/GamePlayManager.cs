@@ -65,6 +65,9 @@ namespace DottedFill
                 case GameState.WIN:
                     GameManager.Instance.NextLevel();
                     UIGameplayManager.Instance.DisplayWinningMenu(true);
+
+                    // Sound
+                    SoundManager.Instance.PlaySound(SoundType.Win, false);
                     break;
                 case GameState.GAMEOVER:
      

@@ -242,8 +242,63 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &244271149
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 244271150}
+  - component: {fileID: 244271151}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &244271150
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244271149}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &244271151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244271149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36242bb8b2e20a943987275536f6b0d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundAudioClips:
+  - soundType: 2
+    audioClips:
+    - {fileID: 8300000, guid: df45f447e44d9b04ab4b54650a756fbd, type: 3}
+  - soundType: 1
+    audioClips:
+    - {fileID: 8300000, guid: cb0fdfc4965629147b7ed60700284cb7, type: 3}
+  oneShotGameObject: {fileID: 0}
+  sfxVolume: 1
+  backgroundSoundClip: {fileID: 8300000, guid: 02d25ed264b3f2c4cac3f4bf83b40287, type: 3}
+  backgroundVolume: 0.5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,6 +697,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas_FadeUI
       objectReference: {fileID: 0}
+    - target: {fileID: 141927597879585892, guid: cf34c2b07c6eb284989621f9700689b9, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
+    - target: {fileID: 141927597879585892, guid: cf34c2b07c6eb284989621f9700689b9, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 528373051
+      objectReference: {fileID: 0}
     - target: {fileID: 141927597879585895, guid: cf34c2b07c6eb284989621f9700689b9, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -652,7 +715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 141927597879585895, guid: cf34c2b07c6eb284989621f9700689b9, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 141927597879585895, guid: cf34c2b07c6eb284989621f9700689b9, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1331,7 +1394,7 @@ RectTransform:
   - {fileID: 1541627561}
   - {fileID: 1281349735}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1693,7 +1756,7 @@ RectTransform:
   - {fileID: 905872401}
   - {fileID: 20029229}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1717,6 +1780,10 @@ MonoBehaviour:
   musicBtn: {fileID: 1769759743}
   soundFXBtn: {fileID: 1211783082}
   playBtn: {fileID: 905872402}
+  soundFXSprite: {fileID: 21300000, guid: 09d8bd273d3db304a8548dd621b30cba, type: 3}
+  muteSoundFXSprite: {fileID: 21300000, guid: f9c9681f85aee5c42add8b6ab684958f, type: 3}
+  musicSprite: {fileID: 21300000, guid: e4add34a4f381724e879e52cc2398b40, type: 3}
+  muteMusicSprite: {fileID: 21300000, guid: f6a670c4c730de74f91b6df502c8ec46, type: 3}
 --- !u!224 &802874730563116234
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1731,7 +1798,7 @@ RectTransform:
   m_Children:
   - {fileID: 802874731258159254}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

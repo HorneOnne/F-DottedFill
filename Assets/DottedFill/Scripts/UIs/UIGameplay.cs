@@ -21,6 +21,7 @@ namespace DottedFill
             homeBtn.onClick.AddListener(() =>
             {
                 Loader.Load(Loader.Scene.MainMenuScene);
+                SoundManager.Instance.PlaySound(SoundType.Button, false);
             });
         }
 
