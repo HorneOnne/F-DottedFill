@@ -63,7 +63,8 @@ namespace DottedFill
                     break;
 
                 case GameState.WIN:
- 
+                    GameManager.Instance.NextLevel();
+                    UIGameplayManager.Instance.DisplayWinningMenu(true);
                     break;
                 case GameState.GAMEOVER:
      

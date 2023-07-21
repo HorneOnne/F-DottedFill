@@ -29,7 +29,7 @@ namespace DottedFill
                 case GamePlayManager.GameState.WAITING:
                     if(Input.GetMouseButtonUp(0))
                     {
-                        gamePlayManager.currentState = GamePlayManager.GameState.PLAYING;
+                        gamePlayManager.ChangeGameState(GamePlayManager.GameState.PLAYING);
                     }
                     break;
                 case GamePlayManager.GameState.PLAYING:
